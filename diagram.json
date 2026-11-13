@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Le Thi Kim Yen - DPM235503",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 20, "left": -280, "attrs": {} },
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 0, "left": 60, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -160, "left": 110, "attrs": { "delayTime": "10" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 124, "left": 200, "attrs": { "value": "220" } },
+    { "type": "wokwi-led", "id": "led1", "top": 40, "left": 250, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": -140, "left": 290, "attrs": { "volume": "0.1" } }
+  ],
+  "connections": [
+    [ "uno:5V", "bb1:bp.1", "red", [ "v20", "h180" ] ],
+    [ "uno:GND.2", "bb1:bn.1", "black", [ "v30", "h160" ] ],
+
+    [ "pir1:VCC", "bb1:bp.5", "red", [ "v0" ] ],
+    [ "pir1:GND", "bb1:bn.5", "black", [ "v0" ] ],
+    [ "pir1:OUT", "bb1:5t.a", "green", [ "v0" ] ],
+    [ "bb1:5t.e", "uno:2", "green", [ "v0" ] ],
+
+    [ "uno:9", "bb1:15b.f", "orange", [ "v-20", "h220" ] ],
+
+    [ "r1:1", "bb1:15b.h", "orange", [ "v0" ] ],
+    [ "r1:2", "bb1:19b.h", "orange", [ "v0" ] ],
+    [ "led1:A", "bb1:19b.f", "red", [ "v0" ] ],
+    [ "led1:C", "bb1:bn.19", "black", [ "v0" ] ],
+
+    [ "bb1:15b.j", "bz1:2", "purple", [ "v0" ] ],
+    [ "bz1:1", "bb1:bn.23", "black", [ "v0" ] ]
+  ]
+}
