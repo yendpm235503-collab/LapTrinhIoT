@@ -1,2 +1,2 @@
 # LapTrinhIoT
-BTCN
+BTCN, Đồ án cá nhân, Đồ án nhóm
